@@ -486,7 +486,61 @@
       .stat-num { font-size: 1.9rem; }
       .hero { padding: 80px 5% 44px; }
       section { padding: 60px 5%; }
+      .services-extra { grid-template-columns: 1fr; }
     }
+
+    /* ── EXTRA SERVICES ─────────────────────────────── */
+    .services-divider {
+      margin-top: 56px; padding-top: 48px;
+      border-top: 1px solid var(--gray-light);
+    }
+    .services-divider-label {
+      font-size: .78rem; font-weight: 700; color: var(--blue);
+      letter-spacing: .12em; text-transform: uppercase; margin-bottom: 24px;
+    }
+    .services-extra {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    .service-card {
+      background: var(--white); border-radius: 10px;
+      padding: 28px 22px;
+      box-shadow: 0 2px 14px rgba(0,0,0,.06);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,0,0,.10); }
+    .service-card-icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: rgba(41,171,226,.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem; margin-bottom: 14px;
+    }
+    .service-card h3 { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .service-card p { font-size: .855rem; color: var(--gray); line-height: 1.6; }
+    @media (max-width: 768px) {
+      .services-extra { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* ── EXPO 2027 BADGE ────────────────────────────── */
+    .expo-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: rgba(255,165,0,.13); color: #c47e00;
+      border: 1px solid rgba(255,165,0,.35);
+      padding: 4px 13px; border-radius: 20px;
+      font-size: .76rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+
+    /* ── FOOTER SOCIAL ──────────────────────────────── */
+    .footer-social { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
+    .footer-social a {
+      display: flex; align-items: center; gap: 5px;
+      color: rgba(255,255,255,.45); font-size: .8rem;
+      text-decoration: none; transition: color .2s;
+      background: rgba(255,255,255,.06); border-radius: 5px;
+      padding: 5px 10px;
+    }
+    .footer-social a:hover { color: var(--blue); background: rgba(41,171,226,.1); }
   </style>
 </head>
 <body>
@@ -497,7 +551,7 @@
     <img src="ITC_Logo_black_bg.jpeg" alt="Integraltechnic" />
   </a>
   <ul class="nav-links">
-    <li><a href="#stands">Stand Types</a></li>
+    <li><a href="#stands">Services</a></li>
     <li><a href="#why">Why Us</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#portfolio">Portfolio</a></li>
@@ -510,7 +564,7 @@
 </nav>
 <div class="nav-drawer" id="navDrawer">
   <ul>
-    <li><a href="#stands"  onclick="closeMenu()">Stand Types</a></li>
+    <li><a href="#stands"  onclick="closeMenu()">Services</a></li>
     <li><a href="#why"     onclick="closeMenu()">Why Us</a></li>
     <li><a href="#process" onclick="closeMenu()">Process</a></li>
     <li><a href="#portfolio" onclick="closeMenu()">Portfolio</a></li>
@@ -523,9 +577,10 @@
 <section class="hero" id="home">
   <div class="hero-bg"></div>
   <div class="hero-content">
-    <div class="hero-tag">Exhibition Stand Builders · Belgrade, Serbia</div>
+    <div class="expo-badge">★ Expo 2027 Partner</div>
+    <div class="hero-tag">Fair Engineering · Belgrade, Serbia · 40+ Years</div>
     <h1>Building Your<br/><span>Ideas to Life.</span></h1>
-    <p>From modular system stands to fully bespoke designer builds — Integraltechnic delivers exhibition spaces that make your brand impossible to ignore.</p>
+    <p>From exhibition stands and open-air events to sports venues, scenography, and interior fit-outs — Integraltechnic turns your vision into spaces that make your brand impossible to ignore.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Get a Free Quote</a>
       <a href="https://calendly.com/aleksandra-itcbg/30min" target="_blank" rel="noopener" class="btn-calendly">
@@ -581,9 +636,9 @@
 <!-- ── STAND TYPES ── -->
 <section class="stands" id="stands">
   <div class="section-header">
-    <div class="section-tag">What We Build</div>
-    <h2 class="section-title">Stand Solutions for Every Exhibitor</h2>
-    <p class="section-sub">Whether you need a cost-effective modular solution or a one-of-a-kind brand statement, we have the expertise to deliver.</p>
+    <div class="section-tag">What We Do</div>
+    <h2 class="section-title">Services Across Every Sector</h2>
+    <p class="section-sub">From trade fair stands to large-scale events, sports venues, scenography and interiors — full in-house capability across every discipline.</p>
   </div>
   <div class="stands-grid">
 
@@ -644,6 +699,33 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- Additional service categories -->
+  <div class="services-divider">
+    <div class="services-divider-label">Also in Our Portfolio</div>
+    <div class="services-extra">
+      <div class="service-card">
+        <div class="service-card-icon">🌿</div>
+        <h3>Open Air Events</h3>
+        <p>Outdoor stages, branded structures, pavilions and event infrastructure for festivals, launches and public activations.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">🏟️</div>
+        <h3>Sports Events</h3>
+        <p>VIP zones, sponsor stands, media infrastructure and hospitality areas for sports venues and major sporting events.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">🎭</div>
+        <h3>Scenography</h3>
+        <p>Custom stage sets, theatrical scenery and immersive environments for cultural institutions, TV productions and live events.</p>
+      </div>
+      <div class="service-card">
+        <div class="service-card-icon">🏢</div>
+        <h3>Interiors</h3>
+        <p>Commercial and office interior fit-outs, showrooms and branded retail environments designed and built in-house.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -814,21 +896,21 @@
         <div class="contact-detail-icon">📍</div>
         <div>
           <h5>Address</h5>
-          <p>Belgrade, Serbia</p>
+          <p>Bulevar Vojvode Mišića 14, hala 4<br/>11000 Beograd, Srbija</p>
         </div>
       </div>
       <div class="contact-detail">
         <div class="contact-detail-icon">✉️</div>
         <div>
           <h5>Email</h5>
-          <p>info@itcbg.co.rs</p>
+          <p><a href="mailto:office@itcbg.co.rs" style="color:inherit;text-decoration:none;">office@itcbg.co.rs</a></p>
         </div>
       </div>
       <div class="contact-detail">
         <div class="contact-detail-icon">📞</div>
         <div>
           <h5>Phone</h5>
-          <p>+381 (0)11 ...</p>
+          <p>+381 11 3611 525<br/>+381 11 3611 424<br/>+381 63 264 933</p>
         </div>
       </div>
 
@@ -896,16 +978,38 @@
       <div class="footer-logo">
         <img src="ITC_Logo_black_bg.jpeg" alt="Integraltechnic" />
       </div>
-      <p>Professional exhibition stand builders based in Belgrade, serving exhibitors across Europe for over 40 years.</p>
+      <p>Fair engineering and event production based in Belgrade. Exhibition stands, open-air events, sports venues, scenography and interiors — serving clients across Europe for over 40 years.</p>
+      <div class="footer-social">
+        <a href="https://www.facebook.com/integraltechnic" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Facebook
+        </a>
+        <a href="https://www.instagram.com/integraltechnic" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          Instagram
+        </a>
+        <a href="https://wa.me/38163264933" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+          WhatsApp
+        </a>
+        <a href="viber://chat?number=%2B38163264933" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.4 0C5.1 0 .5 4.5.5 10.6c0 2.8 1.1 5.4 3 7.3v3.5c0 .3.2.6.5.6h.1l3.4-1.2c1.3.5 2.7.8 4.2.8 6.3 0 10.8-4.5 10.8-10.6C22.5 4.5 17.7 0 11.4 0zm5.5 15.8c-.5.6-1.2 1-2 1.2-.3.1-.6.1-.9 0-1.3-.4-3-1.3-4.4-2.7-1.4-1.4-2.3-3.1-2.7-4.4-.1-.3-.1-.6 0-.9.2-.8.6-1.5 1.2-2 .4-.4 1-.3 1.3.1l1.5 2c.3.4.2 1-.1 1.3l-.5.5c-.2.2-.2.4-.1.6.3.7.9 1.4 1.5 2 .6.6 1.3 1.2 2 1.5.2.1.4.1.6-.1l.5-.5c.3-.3.9-.4 1.3-.1l2 1.5c.4.3.5.9.1 1.3z"/></svg>
+          Viber
+        </a>
+        <a href="https://t.me/integraltechnic" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.833.941z"/></svg>
+          Telegram
+        </a>
+      </div>
     </div>
     <div class="footer-col">
       <h5>Services</h5>
       <ul>
-        <li><a href="#stands">System Stands</a></li>
-        <li><a href="#stands">Custom Designer Stands</a></li>
-        <li><a href="#stands">Turnkey Service</a></li>
-        <li><a href="#stands">Stand Storage</a></li>
-        <li><a href="#stands">Logistics</a></li>
+        <li><a href="#stands">Exhibition Stands</a></li>
+        <li><a href="#stands">Open Air Events</a></li>
+        <li><a href="#stands">Sports Events</a></li>
+        <li><a href="#stands">Scenography</a></li>
+        <li><a href="#stands">Interiors</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -920,15 +1024,17 @@
     <div class="footer-col">
       <h5>Contact</h5>
       <ul>
-        <li><a href="mailto:info@itcbg.co.rs">info@itcbg.co.rs</a></li>
-        <li><a href="https://www.itcbg.co.rs">www.itcbg.co.rs</a></li>
-        <li><a href="#contact">Get a Quote</a></li>
+        <li><a href="mailto:office@itcbg.co.rs">office@itcbg.co.rs</a></li>
+        <li><a href="tel:+381113611525">+381 11 3611 525</a></li>
+        <li><a href="tel:+381113611424">+381 11 3611 424</a></li>
+        <li><a href="tel:+38163264933">+381 63 264 933</a></li>
+        <li><a href="https://www.itcbg.co.rs" target="_blank" rel="noopener">www.itcbg.co.rs</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 Integraltechnic. All rights reserved.</p>
-    <p>Belgrade, Serbia · Exhibition Stand Builders</p>
+    <p>© 2026 Integraltechnic. All rights reserved.</p>
+    <p>Bulevar Vojvode Mišića 14, Beograd · <a href="https://www.itcbg.co.rs" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;">www.itcbg.co.rs</a></p>
   </div>
 </footer>
 
